@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  <title>Project Details - EVC</title>
+  {% endblock title %}
+  
+
+{% block content %}
+
+<!--=================================
+ banner -->
+
+<section class="inner-intro bg bg-fixed bg-overlay-black-70" style="background-image:url({% static 'images/bg/bg-2.jpg' %});">
+  <div class="container">
+     <div class="row intro-title text-center">
+           <div class="col-sm-12">
+				<div class="section-title"><h1 class="title text-white">Project Details</h1></div>
+           </div>
+           <div class="col-sm-12">
+             <ul class="page-breadcrumb">
+                <li><a href="{% url 'home'%}"><i class="fa fa-home"></i> Home</a> <i class="fa fa-angle-double-right"></i></li>
+                <li><a href="{% url 'projects' %}">Projects</a> <i class="fa fa-angle-double-right"></i></li>
+                <li><span>Project Details</span> </li>
+             </ul>
+        </div>
+     </div>
+  </div>
+</section>
+
+<!--=================================
+ banner -->
+
+<!--=================================
+ Page Section -->
+
+<section class="our-sercive page-section-ptb pb-20"><div class="container">
+	<div class="row">
+    	<div class="col-md-6 col-sm-12 mb-30"><img class="img-responsive" src="{% static 'images/about/01.jpg' %}" alt=""></div>
+        <div class="col-md-6 col-sm-12 mb-30"><div class="content-block pl-10">
+        	<div class="section-title"><h3 class="title">Project Description</h3></div>
+            <p>This is a dummy text to keep this element in position. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><br>
+Sed ut perspiciatis unde omnis iste natus error sit voluptatems accusantium doloremqu laudantiums ut, totams se aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae duis autems vell eums iriure dolors in hendrerit saepe eveniet in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at seds eros sed et accumsan et iusto odio dignissim.</p>
+			<div class="team-social-icon social-icons border color-hover mt-20"><ul>
+                      <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li class="social-pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                      <li class="social-behance"><a href="#"><i class="fa fa-behance"></i></a></li>
+                 </ul></div>
+            </div>
+        </div>
+        </div>
+        <div class="row mt-20 mb-40">
+          <div class="col-lg-12 col-md-12">
+             <p>Quod quasi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, quam eveniet quia officiis hic? Explicabo doloribus modi optio magni quis. At consequuntur explicabo recusandae, tenetur provident ipsum dolor sit amet, consectetur adipisicing elit. Quasi itaque laborum quod magnam, tempora est, amet omnis a similique, beatae quo deserunt accusantium accusamus voluptatem odit impedit harum numquam rerum? quae, quia.</p>
+             <div class="row mt-30 mb-30">
+               <div class="col-lg-3 col-md-3">
+                <ul class="list list-mark">
+                        <li>Accurate Land Survey</li>
+                        <li>Extensive geotechnical analysis</li>
+                        <li>Quality material selection</li>
+                        <li>Completed within time frame</li>
+                        <li>Full interior and exterior finish</li>
+                  </ul>
+                </div>
+                <div class="col-lg-9 col-md-9"> 
+                  <p>Ab fuga possimus rem voluptatem lorem ipsum dolor sit amet, consectetur adipisicing elit. cum at id esse, autem asperiores blanditiis ipsum laboriosam facilis quas, quos Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas sit, quisquam excepturi obcaecati. Qui necessitatibus iste, eius, eligendi sed cumque dolore assumenda distinctio illo id repellendus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero corporis sed asperiores quod eum voluptates, eaque accusantium nobis vel natus accusamus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae odit ex assumenda nihil architecto aperiam aliquam, deleniti autem. Sit eum aliquid, explicabo non provident nulla maiores distinctio amet voluptatem quam! officiis aperiam expedita nihil fugiat enim maiores inventore placeat! voluptas in, doloremque laboriosam. molestiae officiis quasi libero labore.</p>                  
+                 </div>
+                </div>
+             <p>Consectetur adipisicing elit lorem ipsum dolor sit amet, Minima, quam eveniet quia officiis hic? Explicabo doloribus modi optio magni quis. At consequuntur explicabo recusandae, tenetur provident quod quasi quae, quia.</p>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="pro-details-section page-section-ptb pb-50 bg fixed text-white gradient-overlay" style="background-image:url({% static 'images/bg/bg-9.jpg' %});">
+<div class="container"><div class="row">
+	<div class="col-md-9">
+     <div class="section-title"><h2 class="title title2">Project <label>Details</label></h2></div>
+     <div class="row mt-50">
+     		<div class="col-md-4 col-xs-6 col-xx-12"><div class="feature-box left_pos small">
+                <i class="glyph-icon flaticon-interface-6"></i>
+                <h3 class="title">Category :</h3>
+                <p>Construction</p>
+            </div></div>
+            <div class="col-md-4 col-xs-6 col-xx-12"><div class="feature-box left_pos small">
+                <i class="glyph-icon flaticon-people-10"></i>
+                <h3 class="title">Client :</h3>
+                <p>ID Malls Pvt Ltd</p>
+            </div></div>
+            <div class="col-md-4 col-xs-6 col-xx-12"><div class="feature-box left_pos small">
+                <i class="glyph-icon flaticon-interface"></i>
+                <h3 class="title">Date :</h3>
+                <p>21st Aug, 2016</p>
+            </div></div>
+            <div class="col-md-4 col-xs-6 col-xx-12"><div class="feature-box left_pos small">
+                <i class="glyph-icon flaticon-location"></i>
+                <h3 class="title">Location :</h3>
+                <p>Kwara, Nigeria</p>
+            </div></div>
+            <div class="col-md-4 col-xs-6 col-xx-12"><div class="feature-box left_pos small">
+                <i class="glyph-icon flaticon-projection-screen-with-bar-chart"></i>
+                <h3 class="title">Value :</h3>
+                <p>#24,000,000.00</p>
+            </div></div>
+            <div class="col-md-4 col-xs-6 col-xx-12"><div class="feature-box left_pos small">
+                <i class="glyph-icon flaticon-gps"></i>
+                <h3 class="title">Area :</h3>
+                <p>110 m2</p>
+            </div></div>
+       </div>
+    </div>
+</div></div>
+</section>
+
+<section class="page-section-ptb"><div class="container"><div class="row">
+	<div class="col-sm-12"><div class="section-title"><h2 class="title">Related Projects</h2></div></div>
+      <div class="col-sm-12"><div class="owl-carousel" data-nav-arrow="true" data-items="4" data-xs-items="2">
+          <div class="item"><div class="about pro-deta">
+            <div class="about-image clearfix"><img class="img-responsive" src="{% static 'images/about/01.jpg' %}" alt=""></div>
+            <div class="about-details">
+              <h5 class="title"><a href="#"> consectetur adipisicing </a> </h5>
+              <div class="about-des">Architecture, Tiling</div>
+            </div>                
+          </div></div>
+          <div class="item"><div class="about pro-deta">
+            <div class="about-image clearfix"><img class="img-responsive" src="{% static 'images/about/02.jpg' %}" alt=""></div>
+            <div class="about-details">
+              <h5 class="title"><a href="#"> Explicabo doloribus </a> </h5>
+              <div class="about-des">Architecture, Tiling</div>
+            </div>                
+          </div></div>
+          <div class="item"><div class="about pro-deta">
+            <div class="about-image clearfix"><img class="img-responsive" src="{% static 'images/about/03.jpg' %}" alt=""></div>
+            <div class="about-details">
+              <h5 class="title"><a href="#"> At consequuntur </a> </h5>
+              <div class="about-des">Architecture, Tiling</div>
+            </div>                
+          </div></div>
+          <div class="item"><div class="about pro-deta">
+            <div class="about-image clearfix"><img class="img-responsive" src="{% static 'images/about/01.jpg' %}" alt=""></div>
+            <div class="about-details">
+              <h5 class="title"><a href="#"> quasi libero labor </a> </h5>
+              <div class="about-des">Architecture, Tiling</div>
+            </div>                
+          </div></div>
+          <div class="item"><div class="about pro-deta">
+            <div class="about-image clearfix"><img class="img-responsive" src="{% static 'images/about/02.jpg' %}" alt=""></div>
+            <div class="about-details">
+              <h5 class="title"><a href="#"> provident quod </a> </h5>
+              <div class="about-des">Architecture, Tiling</div>
+            </div>                
+          </div></div>
+          <div class="item"><div class="about pro-deta">
+            <div class="about-image clearfix"><img class="img-responsive" src="{% static 'images/about/03.jpg' %}" alt=""></div>
+            <div class="about-details">
+              <h5 class="title"><a href="#"> lorem ipsum amet </a> </h5>
+              <div class="about-des">Architecture, Tiling</div>
+            </div>                
+          </div></div>
+      </div></div>
+</div></div></section>
+
+
+<!--=================================
+ page-section -->
+
+<section class="action-box small yellow-bg"><div class="container"><div class="row">
+	<div class="col-sm-8 text-left"><h4>builidng creative structures since 2016.</h4></div>
+	<div class="col-sm-4 text-right text-xs-left"><a href="#" class="button border animated middle-fill"><span>GET A QUOTE</span></a></div>
+</div></div></section>
+
+{% endblock content %}

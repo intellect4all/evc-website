@@ -1,0 +1,248 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+
+{% block title %}
+<title>About Us</title>
+{% endblock title %}
+
+{% block menu %}
+<div class="menu">  
+  <div class="container"> 
+    <div class="row"> 
+     <div class="col-lg-12 col-md-12"> 
+     <!-- menu start -->
+       <nav id="menu" class="mega-menu">
+        <!-- menu list items container -->
+        <section class="menu-list-items">
+            <!-- menu logo -->
+            <ul class="menu-logo">
+                <li><a href="{% url 'home' %}"><img id="logo_dark_img" src="{% static 'images/logo.jpg' %}" alt="logo"> </a></li>
+            </ul>
+            <!-- menu links -->
+            <ul class="menu-links">
+            <!-- active class -->
+            <li ><a href="{% url 'home' %}"> Home </i></a>
+            </li>
+            
+            <li><a href="{% url 'services' %}"> Services </a>
+                
+            </li>
+            <li><a href="{% url 'projects' %}"> Projects </a> 
+            </li>
+            <li class="active"><a href="{% url 'about' %}"> About Us</a>
+            </li>
+            <li><a href="javascript:void(0)"> Contact <i class="fa fa-angle-down fa-indicator"></i></a>
+                 <!-- drop down multilevel  -->
+                <ul class="drop-down-multilevel right-menu">
+                    <li><a href="contact-1.html">Contact 1</a></li>
+                    <li><a href="contact-2.html">Contact 2</a></li>
+                    <li><a href="contact-3.html">Contact 3</a></li>
+                </ul>
+            </li>
+        </ul>
+           </section>
+         </nav>
+       </div>
+     </div>
+    </div>
+   </div>
+
+{% endblock menu %}
+
+
+{% block content %}
+<!--=================================
+ banner -->
+
+<section class="inner-intro bg bg-fixed bg-overlay-black-70" style="background-image:url({% static 'images/bg/bg-2.jpg' %});">
+  <div class="container">
+     <div class="row intro-title text-center">
+           <div class="col-sm-12">
+				<div class="section-title"><h1 class="title text-white">About Us</h1></div>
+           </div>
+           <div class="col-sm-12">
+             <ul class="page-breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a> <i class="fa fa-angle-double-right"></i></li>
+                <li><span>About Us</span> </li>
+             </ul>
+        </div>
+     </div>
+  </div>
+</section>
+
+<!--=================================
+ banner -->
+
+<section class="action-box small yellow-bg"><div class="container"><div class="row">
+	<div class="col-sm-8 text-left"><h4>Building creative structures since 2016..</h4></div>
+	<div class="col-sm-4 text-right text-xs-left"><a href="#" class="button border animated middle-fill"><span>GET A QUOTE</span></a></div>
+</div></div></section>
+
+<!--=================================
+ Page Section -->
+
+<section class="page-section-pt"><div class="container"><div class="row">
+	<div class="col-sm-12">
+    	<div class="section-title text-center">
+        	<h2 class="title">We offer you the best</h2>
+            <p>Over 200 clients have trusted us to deliver the best engineering service to them. They have given us the mandate to execute their projects and we have never failed them for once.</p>
+         </div>
+    </div>
+    <div class="col-sm-12 text-center"><img class="img-responsive" style="display:inline;" src="{% static 'images/f4.jpg' %}" alt=""></div>
+</div></div></section>
+
+<section class="dark-bg page-section-ptb bg fixed text-white gradient-overlay counter-section pb-60" style="background-image:url({% static 'images/bg/bg-6.jpg' %})">
+<div class="container"><div class="row">
+	<div class="col-sm-6 mb-20">
+     <div class="section-title"><h2 class="title title2">The Best <label>Company</label> Ever</h2></div>
+     <p>This is a dummy text to hold this element in place. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, et veniam eligendi adipisci animi, a odio deserunt, perspiciatis ad sit assumenda vitae quos nulla dignissimos? Ad dolore cumque dolores placeat.</p>
+     <a href="#" class="button animated border transparent middle-fill mt-10"><span>Read More</span></a>
+    </div>
+    <div class="col-sm-6 mb-20">
+     <div class="counter-block pt-20">
+     <div class="col-sm-6 col-xs-6 col-xx-12 mb-40">
+		<div class="counter left_icn">
+			<i class="glyph-icon flaticon-projection-screen-with-bar-chart"></i>
+			<span class="timer" data-to="47" data-speed="5000"></span>
+			<label>Completed Projects</label>
+		</div>
+	</div>
+     <div class="col-sm-6 col-xs-6 col-xx-12 mb-40">
+		<div class="counter left_icn">
+			<i class="glyph-icon flaticon-management"></i>
+			<span class="timer" data-to="26" data-speed="5000"></span>
+			<label>Properties</label>
+		</div>
+	</div>
+    <div class="col-sm-6 col-xs-6 col-xx-12">
+		<div class="counter left_icn">
+			<i class="glyph-icon flaticon-trophy"></i>
+			<span class="timer" data-to="110" data-speed="5000"></span>
+			<label>Contract bids</label>
+		</div>
+	</div>
+    <div class="col-sm-6 col-xs-6 col-xx-12">
+		<div class="counter left_icn">
+			<i class="glyph-icon flaticon-like"></i>
+			<span class="timer" data-to="3" data-speed="4000"></span>
+			<label>awards</label>
+		</div>
+	</div>
+    </div> 
+    </div> 
+</div></div>
+</section>
+
+<section class="page-section-ptb pb-50"><div class="container"><div class="row">
+	<div class="col-md-6 mb-30"><img class="img-responsive" src="{% static 'images/ceo.jpg' %}" alt=""></div>
+    <div class="col-md-6">
+        	<div class="section-title"><h2 class="title">CEO Says</h2></div>
+            <h4 class="text-uppercase clearfix"><label class="text-yellow"><strong>Oyedeji Hafeez -</strong></label> [CEO]</h4>
+            <p>This is a dummy text to hold this element in place. Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><br>
+            When an unknown printer took a galley of Eiusmod tempor incididunt ut labore et dolore Ut enim ad minim veniam quis nostrud.</p>
+          <div class="text-right"><img width="130" class="img-responsive pull-right" src="{% static 'images/sign.png' %}" alt=""></div>
+        </div>
+</div></div></section>
+
+<section class="page-section-ptb pb-50 dark-bg bg fixed text-white gradient-overlay" style="background-image:url({% static 'images/bg/bg-5.jpg' %});">
+  <div class="container"><div class="row">
+          <div class="col-md-8">
+          <div class="section-title"><h2 class="title title2">We Are <label>Creating</label> Your Dream</h2></div>
+  <p>This is a dummy text to hold this element in place. Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><br>
+              It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, </p>
+  <div class="row mt-50">
+            <div class="col-sm-6"><div class="feature-box left_bor left_pos ex-small">
+                <i class="glyph-icon flaticon-people-10"></i>
+                <h3 class="title">Safety</h3>
+                <p>Eiusmod tempor incididunt ut labore et dolore Ut enim ad minim veniam quis</p>
+            </div></div>
+            <div class="col-sm-6"><div class="feature-box left_bor left_pos ex-small">
+                <i class="glyph-icon flaticon-trophy"></i>
+                <h3 class="title">Best Quality</h3>
+                <p>Eiusmod tempor incididunt ut labore et dolore Ut enim ad minim veniam quis</p>
+            </div></div>
+        </div>
+          
+      </div>
+  </div></div>
+  </section>
+  <section class="about page-section-ptb pb-30">
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="section-title text-center">
+            <h2 class="title">Services we Provide</h2>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum.</p>
+           </div>
+      </div>
+       <div class="col-lg-4 col-md-4 col-sm-6">
+         <div class="feature-box left_pos">
+             <i class="glyph-icon flaticon-construction-34"></i>
+             <h4 class="title">Project Managament and construction</h4>
+             <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+         <div class="feature-box left_pos">
+             <i class="glyph-icon flaticon-shield"></i>
+             <h4 class="title">Real Estate</h4>
+             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+         <div class="feature-box left_pos">
+             <i class="glyph-icon flaticon-projection-screen-with-bar-chart"></i>
+             <h4 class="title">Good Sale & Marketing</h4>
+             <p>Eiusmod tempor incididunt ut labore et dolore Ut enim ad minim veniam quis nostrud Lorem Ipsum is simply text of the printing and industry.</p>
+          </div>
+        </div>
+        
+     </div>
+  </div>
+
+  <!-- What people say -->
+  </section>
+  <section class="page-section-ptb yellow-bg fixed pattern-overlay pattern-3"><div class="container"><div class="row">
+    <div class="col-sm-12"><div class="section-title text-white text-center"><h2 class="title">What People say</h2></div></div>
+    <div class="col-md-8 col-md-offset-2 col-sm-12 pb-20"><div class="owl-carousel" data-nav-dots="true" data-items="1" data-md-items="1" data-sm-items="1">
+          <div class="item"><div class="testimonial light">
+            <div class="testimonial-avatar"><img alt="" src="{% static 'images/thumbnail/thum-1.jpg' %}"> </div>
+            <div class="testimonial-info"> Our project was a quite complex one. The soil formation wasn't the best for out type of construction and it was a serious engineering problem. But somehoe, EVC came up with an ingenious foundation structure design that was rigid enough to complement the soil in strenght. It was amazing!</div>
+            <div class="author-info"> <strong>Olaoye Idowu - <span>ID Malls</span></strong> </div>
+          </div></div>
+          <div class="item"><div class="testimonial light">
+            <div class="testimonial-avatar"><img alt="" src="{% static 'images/thumbnail/thum-2.jpg' %}"> </div>
+            <div class="testimonial-info"> We were needed of a construction company that can build rigid mass structures in no time. We trusted EVC and we weren't disappointed in any way. </div>
+            <div class="author-info"> <strong>Olayiwola Abdul-Baki - <span>Win-Win Mulitglobals</span></strong> </div>
+          </div></div>
+          <div class="item"><div class="testimonial light">
+            <div class="testimonial-avatar"><img alt="" src="{% static 'images/thumbnail/thum-3.jpg' %}"> </div>
+            <div class="testimonial-info"> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator It uses a dictionary on the Internet.</div>
+            <div class="author-info"> <strong>Paul Flavius - <span>Finance Officer</span></strong> </div>
+          </div></div>
+        </div>
+       </div>
+      </div>
+    </div>
+  </section>
+
+<section class="page-section-ptb4"><div class="container"><div class="row">
+    <div class="col-sm-12"><div class="our-clients white-bg boxed-list owl-carousel"  data-nav-arrow="true" data-items="5" data-md-items="4" data-sm-items="3" data-xs-items="2">
+    	<div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/01.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/02.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/03.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/04.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/05.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/01.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/02.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/03.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/04.png' %}" alt=""></a></div>
+        <div class="item"><a href="#"><img class="img-responsive center-block" src="{% static 'images/clients/05.png' %}" alt=""></a></div>
+	</div></div>
+</div></div></section>
+
+
+
+
+{% endblock content %}

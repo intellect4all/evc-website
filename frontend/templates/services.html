@@ -1,0 +1,355 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  <title>Services - EVC</title>
+{% endblock title %}
+  
+
+{% block menu %}
+<div class="menu">  
+  <div class="container"> 
+    <div class="row"> 
+     <div class="col-lg-12 col-md-12"> 
+     <!-- menu start -->
+       <nav id="menu" class="mega-menu">
+        <!-- menu list items container -->
+        <section class="menu-list-items">
+            <!-- menu logo -->
+            <ul class="menu-logo">
+                <li><a href="{% url 'home' %}"><img id="logo_dark_img" src="{% static 'images/logo.jpg' %}" alt="logo"> </a></li>
+            </ul>
+            <!-- menu links -->
+            <ul class="menu-links">
+            <!-- active class -->
+            <li ><a href="{% url 'home' %}"> Home </i></a>
+            </li>
+            
+            <li class="active"><a href="{% url 'services' %}"> Services </a>
+                
+            </li>
+            <li><a href="{% url 'projects' %}"> Projects </a> 
+            </li>
+            <li><a href="{% url 'about' %}"> About Us</a>
+            </li>
+            <li><a href="javascript:void(0)"> Contact <i class="fa fa-angle-down fa-indicator"></i></a>
+                 <!-- drop down multilevel  -->
+                <ul class="drop-down-multilevel right-menu">
+                    <li><a href="contact-1.html">Contact 1</a></li>
+                    <li><a href="contact-2.html">Contact 2</a></li>
+                    <li><a href="contact-3.html">Contact 3</a></li>
+                </ul>
+            </li>
+        </ul>
+           </section>
+         </nav>
+       </div>
+     </div>
+    </div>
+   </div>
+
+{% endblock menu %}
+  
+
+{% block content %}
+
+<!--=================================
+ banner -->
+ 
+<section class="inner-intro bg bg-fixed bg-overlay-black-70" style="background-image:url({% static 'images/bg/bg-2.jpg' %});">
+  <div class="container">
+     <div class="row intro-title text-center">
+           <div class="col-sm-12">
+				<div class="section-title"><h1 class="title text-white">Services</h1></div>
+           </div>
+           <div class="col-sm-12">
+             <ul class="page-breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a> <i class="fa fa-angle-double-right"></i></li>
+                <li><span>Services</span> </li>
+             </ul>
+        </div>
+     </div>
+  </div>
+</section>
+
+<!--=================================
+ banner -->
+
+
+<!--=================================
+ Page Section -->
+
+<section class="our-sercive page-section-ptb pb-30"><div class="container">
+	<div class="row">
+    	<div class="col-md-6 col-sm-12 mb-30"><img alt="" src="{% static 'images/g5.jpg' %}" class="img-responsive"></div>
+		<div class="col-md-6 col-sm-12">
+        <div class="section-title"><h2 class="title">We are creating Your dream</h2></div>
+            <p>We are creating Your dream the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <div class="row services clearfix mt-30">
+    	 <div class="col-sm-6"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-construction-14"></i>
+			<h3 class="title">Scheduling</h3>
+			<p>The industry's standard dummy text ever since the 1500s</p>
+		</div></div>
+        <div class="col-sm-6"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-construction-34"></i>
+			<h3 class="title">Cost Control</h3>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit.</p>
+		</div></div>
+        <div class="col-sm-6"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-drawing"></i>
+			<h3 class="title">Owner Occupancy</h3>
+			<p>Eiusmod tempor incididunt ut labore et dolore Ut</p>
+		</div></div>
+        <div class="col-sm-6"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-drawing-1"></i>
+			<h3 class="title">Project Layout</h3>
+			<p>CPM is aimed at meeting a client's requirement</p>
+		</div></div>
+    </div></div>
+    </div>
+</div></section>
+
+<section class="action-box action-icon action-box-2 bg fixed text-white bg-overlay-black-80" style="background-image:url({% static 'images/bg/bg-2.jpg' %})"><div class="container"><div class="row">
+	<div class="col-md-9 col-sm-8 text-left"><div class="left">
+    	<i class="glyph-icon flaticon-sign"></i>
+    	<h2 class="text-uppercase pb-10">Attention!</h2>
+        <h5>Looking for best partner for your next construction works? You are at the right place!</h5>
+     </div></div>
+     <div class="col-md-3 col-sm-4 mt-20 text-right text-xs-left">
+     	<a href="#" class="button transparent border animated middle-fill mb-0"><span>HIRE US NOW</span></a>
+     </div>
+</div></div></section>
+
+<section class="page-section-ptb">
+<div class="container"><div class="row">
+ <div class="col-sm-12"><div class="section-title text-center">
+        	<h2 class="title">What we Offer</h2>
+            <p>Construction Project Management (CPM) is the overall planning, coordination, and control of a project from beginning to completion. CPM is aimed at meeting a client's requirement in order to produce a functionally and financially viable project.</p>
+         </div></div>
+  <div class="col-sm-12">
+      <div class="tab tab-bor clearfix"> 
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#home3" data-toggle="tab"><i class="glyph-icon flaticon-buildings-1"></i><span>Project Management</span></a></li>
+          <li><a href="#profile3" data-toggle="tab"><i class="glyph-icon flaticon-construction-14"></i><span>Real Estate</span></a></li>
+          <li><a href="#messages3" data-toggle="tab"><i class="glyph-icon flaticon-people"></i><span>Land Acquisition</span></a></li>
+          <li><a href="#settings3" data-toggle="tab"><i class="glyph-icon flaticon-fax-1"></i><span>Business Experts</span></a></li>
+          <li><a href="#design3" data-toggle="tab"><i class="glyph-icon flaticon-drawing"></i><span>General Contractors</span></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="home3">
+            <img class="img-responsive img-left" src="{% static 'images/tab/4.png' %}" alt="">
+              <h3 class="title mb-20">Project Management</h3>
+              <p><strong> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.</strong><br></p>
+              <p>It is a long established fact dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.<br></p>
+              <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              <ul class="list list-unstyled">
+                <li><i class="fa fa-check"></i> Nor again is there anyone who loves or pursues or desires.</li>
+                <li><i class="fa fa-check"></i> Et harum quidem rerum facilis est et expedita distinctio.</li>
+                <li><i class="fa fa-check"></i> Temporibus autem quibusdam et aut officiis debitis aut rerum.</li>
+                <li><i class="fa fa-check"></i> These cases are perfectly simple and easy to distinguish.</li>
+              </ul>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="profile3">
+            <img class="img-responsive img-left" src="{% static 'images/tab/2.png' %}" alt="">
+              <h3 class="title mb-10">Real Estate</h3>
+              <p><strong>Various versions have evolved over the years, sometimes by accident, dolore magnam aliquam sometimes on purpose injected humour and the like.</strong><br></p>
+              <p>There are many variations of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.<br></p>
+              <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              <ul class="list list-unstyled">
+                <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              </ul>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="messages3">
+            <img class="img-responsive img-left" src="{% static 'images/tab/3.png' %}" alt="">
+              <h3 class="title mb-10">Land Acquisition</h3>
+              <p><strong> It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate.</strong><br></p>
+              <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic wordspredefined chunks as necessary, making this the first true generator on the Internet.<br></p>
+              <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              
+              <ul class="list list-unstyled">
+                <li><i class="fa fa-check"></i> The wise man therefore always holds in these matters.</li>
+                <li><i class="fa fa-check"></i> Nam libero tempore, cum soluta nobis est eligendi .</li>
+                <li><i class="fa fa-check"></i> Nor again is there anyone who loves or pursues or desires.</li>
+                <li><i class="fa fa-check"></i> Neque porro quisquam est, qui dolorem ipsum.</li>
+              </ul>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="settings3">
+            <img class="img-responsive img-left" src="{% static 'images/tab/4.png' %}" alt="">
+              <h3 class="title mb-10">Business Experts</h3>
+              <p><strong>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequ nesciunt.</strong><br></p>
+              <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.<br></p>
+              <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              
+              <ul class="list list-unstyled">
+                <li><i class="fa fa-check"></i> I must explain to you how all this mistaken idea.</li>
+                <li><i class="fa fa-check"></i> It has survived not only five centuries adipiscing elit.</li>
+                <li><i class="fa fa-check"></i> Neque porro quisquam est, qui dolorem ipsum quia.</li>
+                <li><i class="fa fa-check"></i> Labore et dolore magnam aliquam quaerat voluptatem.</li>
+              </ul>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="design3">
+            <img class="img-responsive img-left" src="{% static 'images/tab/3.png' %}" alt="">
+              <h3 class="title mb-10">General Contractors</h3>
+              <p><strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</strong><br></p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.<br></p>
+              <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              <ul class="list list-unstyled">
+                <li><i class="fa fa-check"></i> Sed do eiusmod tempor incididunt ut labore et dolore.</li>
+                <li><i class="fa fa-check"></i> Dolore Ut enim ad minim veniam quis nostrud eiusmod tempor.</li>
+                <li><i class="fa fa-check"></i> Eiusmod tempor incididunt ut labore et dolore Ut enim.</li>
+                <li><i class="fa fa-check"></i> Labore et dolore magnam aliquam quaerat voluptatem.</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+</div></div></div>
+</section>
+
+<section class="dark-bg pattern-overlay fixed pattern-2 text-white"><div class="container-fluid"><div class="row row-eq-height">
+  <div class="col-md-6 col-sm-12"><div class="services-block pb-30 clearfix">
+    <div class="col-sm-12"><div class="section-title"><h2 class="title">Our Services</h2><br></div></div>
+      <div class="col-sm-6"><div class="feature-box left_pos small">
+    <i class="glyph-icon flaticon-construction-14"></i>
+    <h3 class="title">Project Evaluation</h3>
+    <p>When an unknown printer took a galley of type and scrambled ype specimen book.</p>
+  </div></div>
+      <div class="col-sm-6"><div class="feature-box left_pos small">
+    <i class="glyph-icon flaticon-construction-34"></i>
+    <h3 class="title">Virtual Construction</h3>
+    <p>Eiusmod tempor incididunt ut labore et dolore Ut enim ad minim veniam quis nostrud.</p>
+  </div></div>
+      <div class="col-sm-6"><div class="feature-box left_pos small">
+    <i class="glyph-icon flaticon-drawing"></i>
+    <h3 class="title">Value Engineering</h3>
+    <p>It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+  </div></div>
+      <div class="col-sm-6"><div class="feature-box left_pos small">
+    <i class="glyph-icon flaticon-drawing-1"></i>
+    <h3 class="title">Constructability Review</h3>
+    <p>Remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
+  </div></div>
+      <div class="col-sm-6"><div class="feature-box left_pos small">
+    <i class="glyph-icon flaticon-construction-14"></i>
+    <h3 class="title">Cost Control</h3>
+    <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.</p>
+  </div></div>
+      <div class="col-sm-6"><div class="feature-box left_pos small">
+    <i class="glyph-icon flaticon-construction-34"></i>
+    <h3 class="title">Scheduling</h3>
+    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece.</p>
+  </div></div>
+  </div></div>
+  <div style="background-image:url({% static 'images/g2.jpg' %}); background-repeat:no-repeat; background-size:cover;" class="col-md-6"></div>
+</div></div></section>
+<!-- <div class="page-section-ptb pb-40 text-white bg fixed bg-overlay-black-70" style="background-image:url({% static 'images/bg/bg-4.jpg' %}); background-repeat:no-repeat; background-size:cover;"><div class="container"><div class="row">
+	<div class="col-md-3 col-sm-12 text-white">
+    	<div class="section-title text-left">
+        	<h2 class="title">Our Services</h2>
+            <p>It has survived not only five centuries adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+         </div>
+	</div>
+    <div class="col-md-9 col-sm-12"><div class="row clearfix">
+    	<div class="col-sm-4"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-construction-14"></i>
+			<h3 class="title">Heading 1</h3>
+			<p>Labore et dolore magnam aliquam quaerat voluptatem minim veniam quis nostrud.</p>
+		</div></div>
+        <div class="col-sm-4"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-construction-34"></i>
+			<h3 class="title">Heading 2</h3>
+			<p>Dolore Ut enim ad minim veniam quis nostrud eiusmod tempor incididunt ut labore et .</p>
+		</div></div>
+        <div class="col-sm-4"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-drawing"></i>
+			<h3 class="title">Heading 3</h3>
+			<p>CPM is aimed at meeting a client's requirement in order to produce.</p>
+		</div></div>
+        <div class="col-sm-4"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-drawing-1"></i>
+			<h3 class="title">Heading 4</h3>
+			<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself.</p>
+		</div></div>
+        <div class="col-sm-4"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-drawing"></i>
+			<h3 class="title">Heading 5</h3>
+			<p>Eiusmod tempor incididunt ut labore et dolore Ut enim ad minim veniam quis nostrud.</p>
+		</div></div>
+        <div class="col-sm-4"><div class="feature-box left_pos small">
+			<i class="glyph-icon flaticon-drawing-1"></i>
+			<h3 class="title">Heading 6</h3>
+			<p> Enim ad minim veniam quis nostrud eSed do eiusmod tempor incididunt ut labor.</p>
+		</div></div>
+    </div></div>
+</div></div></div> -->
+
+<section class="page-section-ptb  fixed pattern-3"><div class="container"><div class="row">
+  <div class="col-sm-12"><div class="section-title text-yellow text-center"><h2 class="title">What People say</h2></div></div>
+  <div class="col-md-8 col-md-offset-2 col-sm-12 pb-20"><div class="owl-carousel" data-nav-dots="true" data-items="1" data-md-items="1" data-sm-items="1">
+        <div class="item"><div class="testimonial light">
+          <div class="testimonial-avatar"><img alt="" src="{% static 'images/thumbnail/thum-1.jpg' %}"> </div>
+          <div class="testimonial-info"> Our project was a quite complex one. The soil formation wasn't the best for out type of construction and it was a serious engineering problem. But somehoe, EVC came up with an ingenious foundation structure design that was rigid enough to complement the soil in strenght. It was amazing!</div>
+          <div class="author-info"> <strong>Olaoye Idowu - <span>ID Malls</span></strong> </div>
+        </div></div>
+        <div class="item"><div class="testimonial light">
+          <div class="testimonial-avatar"><img alt="" src="{% static 'images/thumbnail/thum-2.jpg' %}"> </div>
+          <div class="testimonial-info"> We were needed of a construction company that can build rigid mass structures in no time. We trusted EVC and we weren't disappointed in any way. </div>
+          <div class="author-info"> <strong>Olayiwola Abdul-Baki - <span>Win-Win Mulitglobals</span></strong> </div>
+        </div></div>
+        <div class="item"><div class="testimonial light">
+          <div class="testimonial-avatar"><img alt="" src="{% static 'images/thumbnail/thum-3.jpg' %}"> </div>
+          <div class="testimonial-info"> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator It uses a dictionary on the Internet.</div>
+          <div class="author-info"> <strong>Paul Flavius - <span>Finance Officer</span></strong> </div>
+        </div></div>
+      </div>
+     </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="page-section-ptb">
+ <div class="container">
+  <div class="row">
+	 <div class="col-sm-12"><div class="section-title text-center">
+		<h2 class="title">Our Client Say</h2>
+		<p>Construction Project Management (CPM) is the overall planning, coordination, and control of a project from beginning to completion. CPM is aimed at meeting a client's requirement in order to produce a functionally and financially viable project.</p>
+	</div></div>
+	
+    <div class="col-md-8 col-md-offset-2 col-sm-12 pb-30"><div class="owl-carousel" data-nav-dots="true" data-items="1" data-md-items="1" data-sm-items="1">
+		<div class="item"><div class="testimonial">
+			<div class="testimonial-avatar"> <img alt="" src="images/thumbnail/thum-1.jpg"> </div>
+			<div class="testimonial-info"> Our old site was very information-heavy; the Constro helped to capture and simplify the message we wanted to get across. It’s now more precise, easy to use and looks great! </div>
+			<div class="author-info"> <strong>Paul Flavius - <span>Paul Flavius</span></strong> </div>
+		</div></div>
+        <div class="item"><div class="testimonial">
+			<div class="testimonial-avatar"> <img alt="" src="images/thumbnail/thum-2.jpg"> </div>
+			<div class="testimonial-info"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </div>
+			<div class="author-info"> <strong>Alice Williams - <span>Civil Engineer</span></strong> </div>
+		</div></div>
+        <div class="item"><div class="testimonial">
+			<div class="testimonial-avatar"> <img alt="" src="images/thumbnail/thum-3.jpg"> </div>
+			<div class="testimonial-info"> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam </div>
+			<div class="author-info"> <strong>John Doe - <span>Finance Officer</span></strong> </div>
+		</div></div>
+	</div>
+  </div>
+  </div>
+</div>
+</section>
+ -->
+
+<!--=================================
+ page-section -->
+
+<section class="action-box small yellow-bg"><div class="container"><div class="row">
+	<div class="col-sm-8 text-left"><h4>Building creative structures since 2016</h4></div>
+	<div class="col-sm-4 text-right text-xs-left"><a href="#" class="button border animated middle-fill"><span>GET A QUOTE</span></a></div>
+</div></div></section>
+<!--=================================
+footer -->
+
+{% endblock content %}
