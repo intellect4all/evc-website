@@ -1,0 +1,60 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Page Title -->
+<section class="page-title" style="background-image: url({% static 'images/background/page-title.jpg' %});">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Latest News</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="index-2.html">Home</a></li>
+                <li>Blog</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+
+<!-- blog-grid -->
+<section class="blog-grid">
+    <div class="auto-container">
+        <div class="row clearfix">
+            {% for post in posts %}
+                {% if post.status == 'Published' %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                        <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><a href="/blog/{{post.published.year}}/{{post.published.month}}/{{post.id}}/"><img src="{{ post.image.url}}" height="257px" width="378px" alt=""></a></figure>
+                                <div class="lower-content">
+                                    <span class="post-date">{{post.published.date}}</span>
+                                    <h3><a href="/blog/{{post.published.year}}/{{post.published.month}}/{{post.id}}/">{{post.title}}</a></h3>
+                                    <ul class="post-info">
+                                        <li><i class="far fa-user"></i><a href="blog-details.html">by {{post.author}}</a></li>
+                                        <li><i class="far fa-comment"></i><a href="blog-details.html">{{post.comments.count}} Comment{{post.comments.count|pluralize}}</a></li>
+                                    </ul>
+                                    <div class="link"><a href="/blog/{{post.published.year}}/{{post.published.month}}/{{post.id}}/"><i class="fas fa-angle-right"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="pagination-wrapper centred">
+            <ul class="pagination clearfix">
+                <li><a href="blog.html"><i class="flaticon-left-arrow"></i></a></li>
+                <li><a href="blog.html" class="current">01</a></li>
+                <li><a href="blog.html">02</a></li>
+                <li><a href="blog.html">03</a></li>
+                <li><a href="blog.html"><i class="flaticon-right-arrow-1"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- blog-grid end -->
+
+{% endblock %}

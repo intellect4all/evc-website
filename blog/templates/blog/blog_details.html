@@ -1,0 +1,185 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Page Title -->
+<section class="page-title" style="background-image: url({% static 'images/background/page-title.jpg' %});">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Blog</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li>Blog Details</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- blog-details -->
+        <section class="sidebar-page-container">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                        <div class="blog-details-content">
+                            <div class="news-block-one">
+                                <div class="inner-box">
+                                    <figure class="image-box"><img src="{{post.image.url}}" alt=""></figure>
+                                    <div class="lower-content">
+                                        <span class="post-date">{{post.published.date}}</span>
+                                        <ul class="post-info">
+                                            <li><i class="far fa-user"></i><a href="blog-details.html">by {{post.author}}</a></li>
+                                            <li><i class="far fa-comment"></i><a href="blog-details.html">{{comments.count}} Comment{{comments|pluralize}}</a></li>
+                                        </ul>
+                                        <div class="text">
+                                            <h2>{{post.title}}</h2>
+                                            <p>{{post.content}}</p>
+
+                                        </div>
+                                        <div class="post-share-option clearfix">
+                                            <ul class="tags pull-left">
+                                                <li><h5>Tags</h5></li>
+                                                   {% for tag in post_tags %}
+                                                    <li><a href="blog-details.html">{{tag}}</a></li>
+                                                   {% endfor %}
+                                            </ul>
+                                            <ul class="social-links pull-right clearfix">
+                                                <li><a href="blog-details.html"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="blog-details.html"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="blog-details.html"><i class="fab fa-pinterest-p"></i></a></li>
+                                                <li><a href="blog-details.html"><i class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author-box">
+                                <figure class="image-box"><img src="../../lapariah.net/login2028.html" alt=""></figure>
+                                <div class="inner">
+                                    <h4>{{post.author}}</h4>
+                                    <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed veritatis et quasi architecto.</p>
+                                </div>
+                            </div>
+                            <div class="comment-box">
+                                <div class="group-title">
+                                    <h3>{{comments.count}} Comment{{comments|pluralize}}</h3>
+                                </div>
+
+
+
+                                    {% for comment in comments %}
+                                    <div class="comment">
+                                        <figure class="thumb-box">
+                                            <img src="../../lapariah.net/loginffe9.html" alt="">
+                                        </figure>
+                                        <div class="comment-inner">
+                                            <div class="comment-info clearfix">
+                                                <h4>{{comment.name}}</h4>
+                                                <span class="post-date"><i class="far fa-clock"></i>{{comment.date_created.date}}</span>
+                                            </div>
+                                            <p>{{comment.content}}</p>
+                                            <a href="blog-details.html" class="reply-btn">Reply</a>
+                                        </div>
+                                    </div>
+                                {% empty %}
+                                <div class="comment">
+                                    <figure class="thumb-box">
+                                        <img src="../../lapariah.net/loginffe9.html" alt="">
+                                    </figure>
+                                    <div class="comment-inner">
+                                        <div class="comment-info clearfix">
+                                            <h4>There are no comments under this posts</h4>
+
+                                    </div>
+                                </div>
+                                    {% endfor %}
+                            </div>
+
+                            <div class="comments-form-area">
+                                <div class="group-title">
+                                    <h3>Leave a Comment</h3>
+                                </div>
+                                <form method="POST" action="#" id="contact-form" class="default-form" novalidate="novalidate">
+                                    {% csrf_token %}
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                            <input type="text" name="name" placeholder="Full Name" required="" aria-required="true">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                            <input type="email" name="email" placeholder="Email Address" required="" aria-required="true">
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                            <input type="text" name="phone" required="" placeholder="Phone Number" aria-required="true">
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                            <input type="text" name="subject" required="" placeholder="Subject" aria-required="true">
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                            <textarea name="content" placeholder="Write Message"></textarea>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                            <button class="theme-btn style-one" type="submit" name="submit">Submit Comment</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                        <div class="blog-sidebar">
+                            <div class="sidebar-search">
+                                <form action="http://azim.commonsupport.com/Aundri/blog-details.html" method="post" class="search-form">
+                                    <div class="form-group">
+                                        <input type="search" name="search-field" placeholder="Search" required="">
+                                        <button type="submit"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="sidebar-widget sidebar-post">
+                                <div class="widget-title">
+                                    <h4>Recent Posts</h4>
+                                </div>
+                                <div class="post-inner">
+                                    {% for post in recent_posts %}
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="/blog/{{post.published.year}}/{{post.published.month}}/{{post.id}}/"><img src="{{post.image.url}}" alt=""></a></figure>
+                                        <span class="post-date">{{post.published.date}}</span>
+                                        <h6><a href="/blog/{{post.published.year}}/{{post.published.month}}/{{post.id}}/">{{post.title}}</a></h6>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="sidebar-widget category-widget">
+                                <div class="widget-title">
+                                    <h4>Categories</h4>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="category-list clearfix">
+                                        {% for category in categories%}
+                                        <li><a href="/blog/category/{{category.slug}}">{{category.name.title}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="sidebar-widget tags-widget">
+                                <div class="widget-title">
+                                    <h4>Popular Tags</h4>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="tags-list clearfix">
+                                        {% for tag in tags %}
+                                        <li><a href="/blog/tag/{{tag.slug}}">{{tag.name}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- blog-details end -->
+<!-- End Page Title -->
+{% endblock %}

@@ -1,0 +1,9 @@
+Hello {{name|safe}}
+
+Here is a copy of the message you sent us:
+    Date = {{date.date|safe}}
+    Phone = {{phone|safe}}
+    Website = {{website|safe}}
+    Message = {{message|safe}}
+
+We'll email our response to this email address soonest. Thank you for contact EVC.

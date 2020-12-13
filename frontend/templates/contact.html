@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+
+{% block title %}
+<title>Contact Us</title>
+{% endblock title %}
+
+{% block menu %}
+<div class="menu">  
+  <div class="container"> 
+    <div class="row"> 
+     <div class="col-lg-12 col-md-12"> 
+     <!-- menu start -->
+       <nav id="menu" class="mega-menu">
+        <!-- menu list items container -->
+        <section class="menu-list-items">
+            <!-- menu logo -->
+            <ul class="menu-logo">
+                <li><a href="{% url 'home' %}"><img id="logo_dark_img" src="{% static 'images/logo.jpg' %}" alt="logo"> </a></li>
+            </ul>
+            <!-- menu links -->
+            <ul class="menu-links">
+            <!-- active class -->
+            <li ><a href="{% url 'home' %}"> Home </i></a>
+            </li>
+            
+            <li><a href="{% url 'services' %}"> Services </a>
+                
+            </li>
+            <li><a href="{% url 'projects' %}"> Projects </a> 
+            </li>
+            <li ><a href="{% url 'about' %}"> About Us</a>
+            </li>
+            <li class="active"><a href="{% url 'contact' %}"> Contact</a>
+            </li>
+        </ul>
+           </section>
+         </nav>
+       </div>
+     </div>
+    </div>
+   </div>
+
+{% endblock menu %}
+
+
+{% block content %}
+<!--=================================
+ banner -->
+
+<section class="inner-intro bg bg-fixed bg-overlay-black-70" style="background-image:url({% static 'images/bg/bg-2.jpg' %});">
+  <div class="container">
+     <div class="row intro-title text-center">
+           <div class="col-sm-12">
+				<div class="section-title"><h1 class="title text-white">Contact Us</h1></div>
+           </div>
+           <div class="col-sm-12">
+             <ul class="page-breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a> <i class="fa fa-angle-double-right"></i></li>
+                <li><span>Contact Us</span> </li>
+             </ul>
+        </div>
+     </div>
+  </div>
+</section>
+
+<!--=================================
+ banner -->
+
+
+
+<!--=================================
+ Page Section -->
+
+
+<section class="contact-sec page-section-pt"><div class="container mb-70"><div class="row">
+    <div class="col-sm-12"><div class="section-title text-center">
+        <h2 class="title">Get in Touch With us</h2>
+        <P>We are always here to take up your project. Your dream should never wait a day, contact us now.</P>
+    </div></div>
+    <div class="col-sm-12"><div class="top-info fill clearfix">
+                <div class="address-block rounded">
+                    <i class="glyph-icon flaticon-construction-5"></i>
+                    <h3 class="title">Location :</h3>
+                    <span>Head office Oke-Odo, Tanke Ilorin,<br>Nigeria</span>
+                </div>
+                <div class="address-block rounded">
+                    <i class="glyph-icon flaticon-technology-2"></i>
+                    <h3 class="title">Phone :</h3>
+                    <span>+2348064924874</span>
+                    <span>+2348064924874</span>
+                </div>
+                <div class="address-block rounded">
+                    <i class="glyph-icon flaticon-email"></i>
+                    <h3 class="title">Mail :</h3>
+                    <a href="#">connect@evc.com</a>
+                    <a href="#">contact@evc.com</a>
+                </div>
+                <div class="address-block rounded">
+                    <i class="glyph-icon flaticon-fax"></i>
+                    <h3 class="title">Whatsapp :</h3>
+                    <span>+2348064924874</span>
+                    <span>+2348064924874</span>
+                </div>
+            </div>
+        </div>
+</div></div>
+
+<div class="container-fluid gray-bg"><div class="row row-eq-height no-gutter">
+    <div class="col-sm-6">
+      <div class="defoult-form pall-50 light-form">
+      <div class="section-title"><h4 class="title">Send Us Message</h4></div>
+        <div id="formmessage" style="display:none">Success/Error Message Goes Here</div>
+           <form role="form" method="post" action="">
+            {% csrf_token %}
+              <div class="form-group half-group">
+                  <label>Name*</label>
+                    <div class="input-group">
+                      <input id="id_name" type="text" placeholder="Name" class="form-control" required  name="name" maxlength="100">
+                    </div>
+              </div>
+              <div class="form-group half-group">
+                <label>Email*</label>
+                    <div class="input-group">
+                    <input id="id_email" type="email" placeholder="Email" required class="form-control" name="email">
+                    </div>
+              </div>
+              <div class="form-group half-group">
+                <label>Phone*</label>
+                    <div class="input-group">
+                      <input id="id_phone" type="text" placeholder="Phone" required class="form-control" name="phone">
+                    </div>
+              </div>
+                <div class="form-group half-group">
+                <label>Website*</label>
+                    <div class="input-group">
+                      <input type="text" id="id_website" placeholder="" class="form-control" name="website">
+                    </div>
+              </div>
+              <div class="form-group">
+                <label>Message*</label>
+                    <div class="input-group">
+                      <textarea class="form-control input-message" id="id_message" required placeholder="Message here" rows="7" name="message"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <input type="hidden" name="action" value="sendEmail"/>
+                <button id="submit" name="submit" type="submit" class="button border animated middle-fill"><span>Submit Now</span></button>
+                </div>
+            </form>
+            <div id="ajaxloader" style="display:none"><img class="center-block" src="images/loading.gif" alt=""></div> 
+            </div>
+    </div>
+    <div class="col-sm-6"><div class="map"><iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8351288872545!2d144.9556518!3d-37.8173306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1443621171568" width="100%" height="100%" style="vertical-align:top; border:0" allowfullscreen></iframe></div></div>
+    
+</div></div>
+</section>
+
+{% endblock content %}
