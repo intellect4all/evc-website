@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+
+
+{% block title %}
+<title>Blog Article</title>
+{% endblock title %}
+
+{% block menu %}
+<div class="menu">  
+  <div class="container"> 
+    <div class="row"> 
+     <div class="col-lg-12 col-md-12"> 
+     <!-- menu start -->
+       <nav id="menu" class="mega-menu">
+        <!-- menu list items container -->
+        <section class="menu-list-items">
+            <!-- menu logo -->
+            <ul class="menu-logo">
+                <li><a href="{% url 'home' %}"><img id="logo_dark_img" src="{% static 'images/logo.jpg' %}" alt="logo"> </a></li>
+            </ul>
+            <!-- menu links -->
+            <ul class="menu-links">
+            <!-- active class -->
+            <li ><a href="{% url 'home' %}"> Home </i></a>
+            </li>
+            
+            <li><a href="{% url 'services' %}"> Services </a>
+                
+            </li>
+            <li><a href="{% url 'projects' %}"> Projects </a> 
+            </li>
+            <li><a href="{% url 'about' %}"> About Us</a>
+            </li>
+            <li class="active"><a href="{% url 'blog' %}"> Blog</a>
+            <li><a href="{% url 'contact' %}"> Contact</a>
+            </li>
+        </ul>
+           </section>
+         </nav>
+       </div>
+     </div>
+    </div>
+   </div>
+
+{% endblock menu %}
+
+
+{% block content %}
+
+
+<!--=================================
+ banner -->
+
+<section class="inner-intro bg bg-fixed bg-overlay-black-70" style="background-image:url({% static 'images/bg/bg-2.jpg' %});">
+  <div class="container">
+     <div class="row intro-title text-center">
+           <div class="col-sm-12">
+				<div class="section-title"><h1 class="title text-white">Blog Details</h1></div>
+           </div>
+           <div class="col-sm-12">
+             <ul class="page-breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a> <i class="fa fa-angle-double-right"></i></li>
+                <li><a href="{% url 'blog' %}">Blog</a> <i class="fa fa-angle-double-right"></i></li>
+                <li><span>Blog Details</span> </li>
+             </ul>
+        </div>
+     </div>
+  </div>
+</section>
+
+<!--=================================
+ banner -->
+
+
+<!--=================================
+ Page Section -->
+
+<section class="page-section-ptb"><div class="container">
+	<div class="row">
+                     
+                     <div class="col-sm-12">
+                        <div class="post">
+                                  <div class="post-image clearfix"><img alt="" src="{{post.image.url}}" style="width: 1200px; height: 500px;" class="img-responsive"></div>
+                                  <div class="post-date">{{post.published.day}}<span>{{post.published|date:"M"}}</span></div>
+                                  <div class="post-details">
+                                  <div class="post-title"><h4 class="title"><a href="#">{{post.title}}</a></h4></div>
+                                  <div class="post-meta">
+                                  	<a href="#"><i class="fa fa-user"></i> {{post.author|capfirst}}</a>
+                                  	<a href="#"><i class="fa fa-comments-o"></i> {{post.comments.count}} Comments</a>
+                                  </div>
+                                  <div class="post-content"><p>{{post.content|safe}}</p><br>
+                      
+              <br>
+            <div class="social-share-box">
+            	<h5 class="title">Did You Like This Post? Share it :</h5>
+                <div class="team-social-icon social-icons social-icons-light social-colored-hover pull-right">
+                  <ul>
+                      <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li class="social-pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                      <li class="social-behance"><a href="#"><i class="fa fa-behance"></i></a></li>
+                  </ul>
+				</div>
+            </div>
+            <div class="comments-1 media">
+                <div class="comments-photo media-left"><a href="#"><img alt="" class="media-object" src="{% static 'images/thumbnail/thum-1.jpg' %}" style="width:80px; height:80px;"></a></div>
+                <div class="comments-info media-body">
+                	<h5 class="title">Badamosi Seyi</h5>
+                    <p>Seyi is Nigerian born content creator whose interest lies in the construcion industry. He has published several insightful and awardwinning articles.</p>
+              </div>
+            </div>
+            <div class="comment-box">
+            	<div class="section-title"><h3 class="title">Comments <label>({{comments.count}})</label></h3></div>
+            	<ol class="list-inline comment-list">
+                {% for comment in comments %}
+                	<li><div class="comments-media">
+                    	<div class="comments-photo media-left"><a href="#"><img alt="" class="media-object" src="{% static 'images/thumbnail/thum-4.jpg' %}" style="width:80px; height:80px;"></a></div>
+                        <div class="comments-info media-body">
+							<h5 class="title">{{comment.name}}</h5>
+                            <div class="comment-metadata"><a href="#"><i class="fa fa-calendar"></i><time>{{comment.date_created}}</time></a></div>
+                            <!-- <a href="#" class="reply button small border animated middle-fill"><span>Reply</span></a> -->
+							<p>{{comment.content}}</p>
+						</div></div>
+                    </li>
+                    {% empty %}
+                    <li><div class="comments-media">
+                    	<div class="comments-photo media-left"><a href="#"><img alt="" class="media-object" src="" style="width:80px; height:80px;"></a></div>
+                        <div class="comments-info media-body">
+							<h5 class="title"></h5>
+                            <div class="comment-metadata"><a href="#"><i class="fa fa-calendar"></i><time>{% now "M d, Y" %}</time></a></div>
+                            <!-- <a href="#" class="reply button small border animated middle-fill"><span>Reply</span></a> -->
+							<p>There are no comments under this post</p>
+						</div></div>
+                    </li>
+                    {% endfor %}
+                                    </ol>
+            </div>
+            <div class="comment-respond">
+            	<div class="section-title text-left">
+                	<h3 class="title">Leave a Reply</h3>
+                    <p>Your email address will not be published. Required fields are marked *</p>
+                 </div>
+            	<form method="POST" action="" >
+                {% csrf_token %}
+            	<div class="form-group half-group">
+                	<label for="InputName">Name*</label>
+                    <div class="input-group">
+            		<input type="text" name="name" class="form-control" id="InputName" placeholder="Name Here" required aria-required="true">
+                    </div>
+            	</div>
+            	<div class="form-group half-group">
+            		<label for="InputEmail">Email*</label>
+                    <div class="input-group">
+            		<input type="email" name="email" class="form-control" id="InputEmail" required aria-required="true" placeholder="Email address here...">
+                    </div>
+            	</div>
+            	<div class="form-group">
+            		<label>Message*</label>
+                    <div class="input-group">
+            		<textarea name="content" class="form-control" rows="5" required aria-required="true"></textarea>
+                    </div>
+            	</div>
+                <div class="form-group">
+            		<button class="button border animated middle-fill" name="submit" type="submit"><span>Submit</span></button>
+                </div>
+            </form>
+            </div>
+	</div>             
+ </div>
+</div>
+
+</div>
+</div>
+</section>
+<!--=================================
+ page-section -->
+
+{% endblock content %}

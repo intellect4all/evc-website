@@ -1,10 +1,15 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import ContactForm
+from blog.models import Post
 from django.contrib import messages
 
 def home(request):
-    return render(request, 'home.html')
+    posts = Post.objects.all()[:4]
+    context = {
+        'posts':posts
+    }
+    return render(request, 'home.html', context)
 
 def about(request):
     return render(request, 'about.html')

@@ -30,6 +30,7 @@
             </li>
             <li><a href="{% url 'about' %}"> About Us</a>
             </li>
+            <li ><a href="{% url 'blog' %}"> Blog</a></li>
             <li><a href="{% url 'contact' %}"> Contact</a>
             </li>
         </ul>
@@ -340,6 +341,7 @@
         <!-- LAYER NR. 9 -->
         <a
           class="tp-caption button border transparent animated middle-fill"
+          href="{% url 'services' %}"
           id="slide-31-layer-10"
           data-x="970"
           data-y="center"
@@ -638,6 +640,7 @@
         <!-- LAYER NR. 18 -->
         <a
           class="tp-caption button border transparent animated middle-fill"
+          href="{% url 'services' %}"
           id="slide-34-layer-10"
           data-x="371"
           data-y="center"
@@ -936,6 +939,7 @@
         <a
           class="tp-caption button border transparent animated middle-fill"
           id="slide-36-layer-10"
+          href="{% url 'services' %}"
           data-x="900"
           data-y="center"
           data-voffset="220"
@@ -979,8 +983,8 @@
         <h4>Building creative structures since 2016</h4>
       </div>
       <div class="col-sm-4 text-right text-xs-left">
-        <a href="#" class="button border animated middle-fill"
-          ><span>GET A QUOTE</span></a
+        <a href="{% url 'contact' %}" class="button border animated middle-fill"
+          ><span>Contact Us</span></a
         >
       </div>
     </div>
@@ -1005,7 +1009,7 @@
               We are a company that specializes in building 
               construction and passionate about bringing designs to live.
             </div>
-            <a class="button link" href="#"
+            <a class="button link" href="{% url 'services' %}"
               ><span
                 >Read More
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span
@@ -1025,7 +1029,7 @@
               At EVC, We make the structural dreams of people 
               come true through the application of engineering.
             </div>
-            <a class="button link" href="#"
+            <a class="button link" href="{% url 'services' %}"
               ><span
                 >Read More
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span
@@ -1046,7 +1050,7 @@
             <div class="about-des">
               We go the extra lenght to build the dream and vision of our clients, even if we have to raise the bar of engineering.
             </div>
-            <a class="button link" href="#"
+            <a class="button link" href="{% url 'services' %}"
               ><span
                 >Read More
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span
@@ -1065,7 +1069,7 @@
             <div class="about-des">
               We are on track to become the foremost engineering firm simplifying construction and pushing the boundaries.
             </div>
-            <a class="button link" href="#"
+            <a class="button link" href="{% url 'services' %}"
               ><span
                 >Read More
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span
@@ -1233,139 +1237,45 @@
           data-sm-items="1"
           data-xs-items="1"
         >
+        {% for post in posts %}
+        {% if post.status == "Published" %}
           <div class="item">
             <div class="post left_pos clearfix">
               <div class="post-image clearfix">
                 <img
                   class="img-responsive"
-                  src="{% static 'images/blog/v_01.jpg' %}"
+                  src="{{post.image.url}}"
+                  style="height: 300px; width: auto;"
                   alt=""
                 />
-                <div class="post-date">27<span>NAV</span></div>
+                <div class="post-date">{{post.published.day}}<span>{{post.published|date:"M"}}</span></div>
               </div>
               <div class="post-details">
                 <div class="post-title">
                   <h5 class="title">
-                    <a href="#">Construction material prices rise </a>
+                    <a href="{% url 'blog_details' post.slug %}">{{post.title}} </a>
                   </h5>
                 </div>
                 <div class="post-meta">
-                  <a href="#"><i class="fa fa-user"></i> Admin</a>
-                  <a href="#"
+                  <a href="#"><i class="fa fa-user"></i> {{post.author|capfirst}}</a>
+                  <!-- <a href="#"
                     ><i class="fa fa-heart-o" aria-hidden="true"></i>98 Like</a
-                  >
+                  > -->
                 </div>
                 <div class="post-content">
                   <p>
-                    Following the recent rise in exchange rates in Nigeriam the cost of construction materials...
+                    {{post.content|truncatewords:10}}
                   </p>
                 </div>
-                <a class="button small border animated middle-fill" href="#"
+                <a class="button small border animated middle-fill" href="{% url 'blog_details' post.slug %}"
                   ><span>Read More</span></a
                 >
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="post left_pos clearfix">
-              <div class="post-image clearfix">
-                <img
-                  class="img-responsive"
-                  src="{% static 'images/blog/v_02.jpg' %}"
-                  alt=""
-                />
-                <div class="post-date">27<span>NAV</span></div>
-              </div>
-              <div class="post-details">
-                <div class="post-title">
-                  <h5 class="title">
-                    <a href="#">The Eiffel Tower Goes Green</a>
-                  </h5>
-                </div>
-                <div class="post-meta">
-                  <a href="#"><i class="fa fa-user"></i> Admin</a>
-                  <a href="#"
-                    ><i class="fa fa-heart-o" aria-hidden="true"></i>98 Like</a
-                  >
-                </div>
-                <div class="post-content">
-                  <p>
-                    This is a dummy text just to hold this element in position.
-                  </p>
-                </div>
-                <a class="button small border animated middle-fill" href="#"
-                  ><span>Read More</span></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="post left_pos clearfix">
-              <div class="post-image clearfix">
-                <img
-                  class="img-responsive"
-                  src="{% static 'images/blog/v_03.jpg' %}"
-                  alt=""
-                />
-                <div class="post-date">27<span>NAV</span></div>
-              </div>
-              <div class="post-details">
-                <div class="post-title">
-                  <h5 class="title">
-                    <a href="#">10 construction industry trends</a>
-                  </h5>
-                </div>
-                <div class="post-meta">
-                  <a href="#"><i class="fa fa-user"></i> Admin</a>
-                  <a href="#"
-                    ><i class="fa fa-heart-o" aria-hidden="true"></i>98 Like</a
-                  >
-                </div>
-                <div class="post-content">
-                  <p>
-                    This is a dummy text just to hold this element in position.
-                  </p>
-                </div>
-                <a class="button small border animated middle-fill" href="#"
-                  ><span>Read More</span></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="post left_pos clearfix">
-              <div class="post-image clearfix">
-                <img
-                  class="img-responsive"
-                  src="{% static 'images/blog/v_04.jpg' %}"
-                  alt=""
-                />
-                <div class="post-date">27<span>NAV</span></div>
-              </div>
-              <div class="post-details">
-                <div class="post-title">
-                  <h5 class="title">
-                    <a href="#">Mapping a building's memory</a>
-                  </h5>
-                </div>
-                <div class="post-meta">
-                  <a href="#"><i class="fa fa-user"></i> Admin</a>
-                  <a href="#"
-                    ><i class="fa fa-heart-o" aria-hidden="true"></i>98 Like</a
-                  >
-                </div>
-                <div class="post-content">
-                  <p>
-                    This is a dummy text just to hold this element in position.
-                  </p>
-                </div>
-                <a class="button small border animated middle-fill" href="#"
-                  ><span>Read More</span></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+          {% endif %}
+          {% endfor %}
+          
       </div>
     </div>
   </div>
@@ -1381,7 +1291,7 @@
         <h3 class="text-uppercase">We have the Experience</h3>
       </div>
       <div class="col-md-4 col-sm-3 text-right text-xs-left">
-        <a href="contact-1.html" class="button big border animated middle-fill"
+        <a href="{% url 'contact' %}" class="button big border animated middle-fill"
           ><span>Contact Us Now</span></a
         >
       </div>

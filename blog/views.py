@@ -1,30 +1,34 @@
-from django.shortcuts import render, redirect
+from django.core import paginator
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import *
+from django.core.paginator import Paginator
 from .forms import CommentForm
 
 
 def blog(request):
     page_title = 'Blog'
     posts = Post.objects.all()
-
+    paginator = Paginator(posts, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     recent_posts = Post.objects.all()[:2]
     context = {
-        'posts': posts,
+        'page_obj': page_obj,
         'recent_posts': recent_posts,
         'page_title': page_title
 
     }
-    return render(request, 'blog/blog.html', context)
+    return render(request, 'blog/blog2.html', context)
 
 
 # Create your views here.
 
 
-def blog_details(request, year, month, pk):
+def blog_details(request, slug):
 
-    post = Post.objects.get(id=pk)
+    post = get_object_or_404(Post, slug=slug)
     post_tags = post.tags.all()
-    post_comments = post.comments.filter(allowed=True)
+    post_comments = post.comments.filter(allowed=True)[:3]
     categories = Category.objects.all()
     tags = Tag.objects.all()
     recent_posts = Post.objects.all()[:3]
@@ -33,10 +37,11 @@ def blog_details(request, year, month, pk):
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
+            print(request.POST)
             user_comment = comment_form.save(commit=False)
             user_comment.post = post
             user_comment.save()
-            return redirect('/' + f'blog/{post.published.year}/{post.published.month}/{post.id}/')
+            return redirect(f'/blog/{slug}/')
     else:
         comment_form = CommentForm()
 
@@ -53,7 +58,7 @@ def blog_details(request, year, month, pk):
 
         }
 
-        return render(request, 'blog/blog_details.html', context)
+        return render(request, 'blog/blog-details.html', context)
     else:
         return redirect('/')
 

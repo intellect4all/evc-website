@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Blog - EVC</title>
+{% endblock title %}
+
+{% block menu %}
+<div class="menu">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <!-- menu start -->
+        <nav id="menu" class="mega-menu">
+          <!-- menu list items container -->
+          <section class="menu-list-items">
+            <!-- menu logo -->
+            <ul class="menu-logo">
+              <li><a href="{% url 'home' %}"><img id="logo_dark_img" src="{% static 'images/logo.jpg' %}" alt="logo">
+                </a></li>
+            </ul>
+            <!-- menu links -->
+            <ul class="menu-links">
+              <!-- active class -->
+              <li><a href="{% url 'home' %}"> Home </i></a>
+              </li>
+
+              <li><a href="{% url 'services' %}"> Services </a>
+
+              </li>
+              <li><a href="{% url 'projects' %}"> Projects </a>
+              </li>
+              <li><a href="{% url 'about' %}"> About Us</a>
+              </li>
+              <li class="active"><a href="{% url 'blog' %}"> Blog</a>
+              <li><a href="{% url 'contact' %}"> Contact</a>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock menu %}
+
+
+{% block content %}
+
+<!--=================================
+ banner -->
+
+<section class="inner-intro bg bg-fixed bg-overlay-black-70"
+  style="background-image:url({% static 'images/bg/bg-2.jpg' %});">
+  <div class="container">
+    <div class="row intro-title text-center">
+      <div class="col-sm-12">
+        <div class="section-title">
+          <h1 class="title text-white">Blog</h1>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <ul class="page-breadcrumb">
+          <li><a href="{%url 'home' %}"><i class="fa fa-home"></i> Home</a> <i class="fa fa-angle-double-right"></i>
+          </li>
+          <li><span>Blog</span> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--=================================
+ banner -->
+
+<!--=================================
+ Page Section -->
+
+ <section class="page-section-ptb pb-60"><div class="container">
+	<div class="row">
+    	<div class="col-sm-12 mb-20"><div class="section-title text-center">
+			<h2 class="title">From the Blog</h2>
+			<p>Read and enjoy specially curated articles on topics in our industry.</p>
+		</div></div>
+    </div>
+
+<div class="row row-eq-height">  
+        <div class="col-sm-12">
+          {% for post in page_obj %}
+          {% if post.status == 'Published' %}
+            <div class="post">
+                <div class="post-image clearfix"><img alt="" style="height: 500px; width: 1200px;" src="{{post.image.url}}" class="img-responsive"></div>
+                <div class="post-date">{{post.published.day}}<span>{{post.published|date:"M"}}</span></div>
+                <div class="post-details">
+                    <div class="post-title"><h4 class="title"><a href="{% url 'blog_details' post.slug %}">{{post.title}}</a></h4></div>
+                    <div class="post-meta">
+                      <a href="#"><i class="fa fa-user"></i> {{ post.author|capfirst }}</a>
+                      <a href="#"><i class="fa fa-comments-o"></i>{{post.comments.count}} Comment{{post.comments.count|pluralize}}</a>
+                    </div>
+                    <div class="post-content"><p>{{post.content|truncatewords:50}}</p>
+                    </div>
+                    <a href="{% url 'blog_details' post.slug %}" class="button small border animated right-icn"><span>Read More<i aria-hidden="true" class="fa fa-long-arrow-right"></i></span></a>
+                </div>                
+                <hr>
+            </div>
+            {% endif %}
+            {%endfor %}
+        </div>
+
+	</div>
+
+<div class="col-sm-12 text-center">
+        <nav class="pagination-nav mt-40">
+          <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li ><a href="?page=1">First</a></li>
+            <li class="previous"><a href="?page={{page_obj.previous_page_number}}"><span aria-hidden="true">&laquo;</span> Prev</a></li>
+            {% endif %}
+
+            <li class="active"><a href="">{{page_obj.number}}</a></li>
+
+            {% if page_obj.has_next %}
+            <li class="next"><a href="?page={{page_obj.next_page_number}}">Next <span aria-hidden="true">&raquo;</span></a></li>
+            <li ><a href="?page={{page_obj.paginator.num_pages}}">Last</a></li>
+            {% endif %}
+            <!-- <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li class="next"><a href="#">Next <span aria-hidden="true">&raquo;</span></a></li> -->
+          </ul>
+        </nav>    
+    </div>
+
+</div></section>
+<!--=================================
+ page-section -->
+
+{% endblock content %}
