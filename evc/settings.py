@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'lmyvkxfom3hkr=)ubpsi(s#mn#t^d@04+fw=z%)i8&0-@dnndl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['evc-website.herokuapp.com', 'localhost']
 
 
 
@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.humanize',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

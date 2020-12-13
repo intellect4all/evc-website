@@ -1,18 +1,28 @@
 from django.db import close_old_connections, models
 from django.db.models.fields import DateTimeField
+from blog.models import Category
 
 # Create your models here.
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=500)
-    category = models.CharField(max_length=100)
+    description = models.TextField(max_length=1500)
+    description2 = models.TextField(max_length=1500, null=True, blank=True)
+    description3 = models.TextField(max_length=1500, null=True, blank=True)
+    category = models.ManyToManyField(Category, null=True, blank=True, default="Construction")
     client = models.CharField(max_length=100)
     date = models.DateField()
     location = models.CharField(max_length=155)
     value = models.IntegerField()
     area = models.IntegerField()
+    image = models.ImageField(null=True, blank=True)
+    image1 = models.ImageField(null=True, blank=True)
+    image2 = models.ImageField(null=True, blank=True)
     date_added = DateTimeField(auto_now_add=True)
+
+    def cat(self):
+        categories = Category.objects.filter(project=self)
+        return categories
 
     class Meta:
         ordering = ['-date_added']

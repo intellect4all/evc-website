@@ -74,144 +74,45 @@
 
 <section class="portfolio-page page-section-ptb pb-50"><div class="container"><div class="row no-gutter">
 <div class="col-sm-12"><div class="popup-gallery columns-3">
+      {% for project in page_obj %}
     	<div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/01.jpg' %}" alt="">
+           <img class="img-responsive center-block" style="width: 700px; height: 250px;" src="{{project.image.url}}" alt="">
            <div class="overlay">
            		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/01.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
+        		<h3><a href="{% url 'project-details' project.id %}">{{project.title}}</a></h3><div class="hr"></div>
+                <a href="{% url 'project-details' project.id %}" class="button border small animated middle-fill"><span>View project</span></a>
+                <a href="{{project.image.url}}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
 			</div></div>
          </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/02.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/02.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/03.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/03.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/04.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/04.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/05.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/05.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/06.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/08.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/07.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/07.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/08.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/08.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/09.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/09.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/10.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/10.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/11.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/11.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/12.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/12.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/13.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/13.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/14.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/14.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
-         <div class="project-info">
-           <img class="img-responsive center-block" src="{% static 'images/project/01.jpg' %}" alt="">
-           <div class="overlay">
-           		<div class="overlay-content">
-        		<h3><a href="{% url 'project-details' %}">Lorem ipsum dolor sit</a></h3><div class="hr"></div>
-                <a href="{% url 'project-details' %}" class="button border small animated middle-fill"><span>View project</span></a>
-                <a href="{% static 'images/project/01.jpg' %}" class="button popup-img border small animated middle-fill"> <span> <i class="fa fa-arrows-alt"></i> </span></a>
-			</div></div>
-         </div>
+         {% endfor %}
     </div></div>
 
-    <div class="col-sm-12 text-center">
+    
+    
+<div class="col-sm-12 text-center">
+  <nav class="pagination-nav mt-40">
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+      <li ><a href="?page=1">First</a></li>
+      <li class="previous"><a href="?page={{page_obj.previous_page_number}}"><span aria-hidden="true">&laquo;</span> Prev</a></li>
+      {% endif %}
+
+      <li class="active"><a href="">{{page_obj.number}}</a></li>
+
+      {% if page_obj.has_next %}
+      <li class="next"><a href="?page={{page_obj.next_page_number}}">Next <span aria-hidden="true">&raquo;</span></a></li>
+      <li ><a href="?page={{page_obj.paginator.num_pages}}">Last</a></li>
+      {% endif %}
+      <!-- <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li class="next"><a href="#">Next <span aria-hidden="true">&raquo;</span></a></li> -->
+    </ul>
+  </nav>    
+</div>
+    <!-- <div class="col-sm-12 text-center">
         <nav class="pagination-nav">
           <ul class="pagination">
             <li class="previous"><a href="#"><span aria-hidden="true">«</span>Prev</a></li>
@@ -223,16 +124,14 @@
             <li class="next"><a href="#">Next<span aria-hidden="true">&raquo;</span></a></li>
           </ul>
         </nav>    
-    </div>
+    </div> -->
+
 
 </div></div></section>
 
 <!--=================================
  page-section -->
 
-<section class="action-box small yellow-bg"><div class="container"><div class="row">
-	<div class="col-sm-8 text-left"><h4>Building Creative structures since 2016.</h4></div>
-	<div class="col-sm-4 text-right text-xs-left"><a href="#" class="button border animated middle-fill"><span>GET A QUOTE</span></a></div>
-</div></div></section>
+{% include 'cta.html' %}
 
 {% endblock content %}

@@ -54,28 +54,28 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style-customizer.css' %}" /> -->
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-557RCPW');</script>
-<!-- End Google Tag Manager -->
+End Google Tag Manager -->
 
 </head>
 
 <body>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-557RCPW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-557RCPW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 <!-- End Google Tag Manager (noscript) -->
 
 <!--=================================
  preloader -->
  
-<!-- <div id="preloader">
-  <div class="clear-loading loading-effect"><span><img width="200" src="images/logo-bw.png" alt="bw-logo"></span><img src="images/loading.gif" width="100" alt=""></div>
-</div> -->
+<div id="preloader">
+  <div class="clear-loading loading-effect"><span><img width="200" src="{% static 'images/logo1.jpg' %}" alt="bw-logo"></span><!--<img src="images/loading.gif" width="100" alt="">--></div>
+</div>
 <!--=================================
 header -->
 
@@ -140,12 +140,12 @@ footer -->
       <div class="footer-link">
         <div class="section-title"><h4 class="title">Our Support</h4></div>
          <ul class="list-mark">
-           <li><a href="index-default.html">Home</a></li>
-           <li><a href="about-1.html">About</a></li>
-           <li><a href="services-1.html">Services</a></li>
-           <li><a href="team-1.html">Team</a></li>
-           <li><a href="blog-left.html">Blog</a></li>
-           <li><a href="portfolio-3-columns.html">Portfolio</a></li>
+           <li><a href="{% url 'home' %}">Home</a></li>
+           <li><a href="{% url 'about' %}">About</a></li>
+           <li><a href="{% url 'services' %}">Services</a></li>
+           <li><a href="{% url 'projects' %}">Projects</a></li>
+           <li><a href="{% url 'blog' %}">Blog</a></li>
+           <li><a href="{% url 'contact' %}">Contact Us</a></li>
          </ul>
        </div> 
      </div>
@@ -194,7 +194,7 @@ footer -->
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
           <ul class="text-right">
-            <li><a href="contact-1.html">Contact Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
           </ul>
         </div>
       </div>

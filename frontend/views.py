@@ -1,7 +1,9 @@
-from django.shortcuts import redirect, render
+from frontend.models import Project
+from django.shortcuts import get_object_or_404, redirect, render
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from .forms import ContactForm
-from blog.models import Post
+from blog.models import Category, Post
 from django.contrib import messages
 
 def home(request):
@@ -15,14 +17,24 @@ def about(request):
     return render(request, 'about.html')
 
 def projects(request):
-    context = {
-        
+    projects = Project.objects.all()
+    paginator = Paginator(projects, 12)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    context={
+        'page_obj': page_obj
     }
     return render(request, 'projects.html', context)
 
-def project_details(request):
+def project_details(request, id):
+    projects = Project.objects.all()[:4]
+    project = get_object_or_404(Project, pk=id)
+    category = Category.objects.filter(project=project)
     context = {
-        
+        'project':project,
+        'projects':projects,
+        'category':category
     }
     return render(request, 'project-details.html', context)
 

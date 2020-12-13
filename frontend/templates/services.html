@@ -112,7 +112,7 @@
         <h5>Looking for best partner for your next construction works? You are at the right place!</h5>
      </div></div>
      <div class="col-md-3 col-sm-4 mt-20 text-right text-xs-left">
-     	<a href="#" class="button transparent border animated middle-fill mb-0"><span>HIRE US NOW</span></a>
+     	<a href="{% url 'contact' %}" class="button transparent border animated middle-fill mb-0"><span>HIRE US NOW</span></a>
      </div>
 </div></div></section>
 
@@ -340,10 +340,7 @@
 <!--=================================
  page-section -->
 
-<section class="action-box small yellow-bg"><div class="container"><div class="row">
-	<div class="col-sm-8 text-left"><h4>Building creative structures since 2016</h4></div>
-	<div class="col-sm-4 text-right text-xs-left"><a href="#" class="button border animated middle-fill"><span>GET A QUOTE</span></a></div>
-</div></div></section>
+{% include 'cta.html' %}
 <!--=================================
 footer -->
 
